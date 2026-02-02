@@ -1,0 +1,71 @@
+=====================================================
+HOW TO BUILD: BLUETOOTH CONTROLLED RC CAR
+=====================================================
+
+Follow these steps to assemble and program your RC car using 
+the provided Arduino code.
+
+STEP 1: COMPONENTS REQUIRED
+---------------------------
+1. Arduino Uno / Nano
+2. L298N Motor Driver
+3. HC-05 or HC-06 Bluetooth Module
+4. 2x DC Gear Motors
+5. Robot Chassis (with wheels)
+6. 7.4V (2x 18650) or 9V-12V Battery Pack
+7. Jumper Wires
+
+STEP 2: WIRING THE MOTORS
+-------------------------
+1. Mount the motors onto the chassis.
+2. Connect the wires of the Left Motor to the 'OUT1' and 'OUT2' 
+   terminals of the L298N driver.
+3. Connect the wires of the Right Motor to the 'OUT3' and 'OUT4' 
+   terminals of the L298N driver.
+
+STEP 3: CONNECTING THE ARDUINO TO L298N
+---------------------------------------
+Connect the control pins from the motor driver to the Arduino 
+digital pins as defined in the code:
+- L298N IN1  -->  Arduino Pin 3
+- L298N IN2  -->  Arduino Pin 5
+- L298N IN3  -->  Arduino Pin 6
+- L298N IN4  -->  Arduino Pin 7
+
+
+
+STEP 4: CONNECTING THE BLUETOOTH MODULE
+---------------------------------------
+1. VCC  -->  Arduino 5V
+2. GND  -->  Arduino GND
+3. TXD  -->  Arduino RX (Pin 0)
+4. RXD  -->  Arduino TX (Pin 1)
+   *Note: Disconnect RX/TX while uploading code to avoid errors.
+
+STEP 5: POWER SUPPLY
+--------------------
+1. Connect the Battery Positive (+) to the 12V terminal of the L298N.
+2. Connect the Battery Negative (-) to the L298N GND terminal.
+3. Connect the Arduino GND to the L298N GND (Common Ground).
+4. Connect the L298N 5V output to the Arduino VIN or 5V pin.
+
+STEP 6: SOFTWARE UPLOAD
+-----------------------
+1. Open the Arduino IDE.
+2. Copy the code from 'main.ino'.
+3. Select your Board (Tools > Board > Arduino Uno).
+4. Select the correct Port.
+5. Click "Upload".
+
+STEP 7: CONTROL VIA SMARTPHONE
+------------------------------
+1. Download a "Bluetooth Terminal" or "Bluetooth RC Car" app.
+2. Pair your phone with 'HC-05' (Default PIN: 1234 or 0000).
+3. Set the buttons in the app to send the following characters:
+   - Up: F
+   - Down: B
+   - Left: L
+   - Right: R
+   - Stop: S
+
+=====================================================
